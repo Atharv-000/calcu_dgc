@@ -1,24 +1,24 @@
 from tkinter import *
 
 def click(event):
-    global scvalue
+    global phval
     text = event.widget.cget("text")
     print(text)
     if text == "=":
-        if scvalue.get().isdigit():
-            value = int(scvalue.get())
+        if phval.get().isdigit():
+            value = int(phval.get())
         else:
             value = eval(screen.get())
 
 
-            scvalue.set(value)
+            phval.set(value)
             screen.update()
 
     elif text == "c":
-        scvalue.set("")
+        phval.set("")
         screen.update()
     else: 
-        scvalue.set(scvalue.get()+ text)
+        phval.set(phval.get()+ text)
         screen.update()
 
 root = Tk()
@@ -26,9 +26,9 @@ root.geometry("350x500")
 root.title("CALCULATOR BY PHANTOM")
 root.resizable(False,False)
 root.configure(bg="black")
-scvalue = StringVar()
-scvalue.set("")
-screen = Entry(root, textvar = scvalue, font= "lucida 40 bold")
+phval = StringVar()
+phval.set("")
+screen = Entry(root, textvar = phval, font= "lucida 40 bold")
 screen.pack(fill = X, ipadx=8,padx = 10,pady=10)
 
 
