@@ -28,7 +28,7 @@ root.resizable(False, False)
 root.configure(bg="black")
 phval = StringVar()
 phval.set("")
-screen = Entry(root, textvar=phval, font="lucida 40 bold")
+screen = Entry(root, textvar=phval,justify='right', font="lucida 40 bold")
 screen.pack(fill=X, ipadx=8, padx=10, pady=10)
 
 f = Frame(root, bg="black")
